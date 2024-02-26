@@ -1,0 +1,29 @@
+html {
+    background-image: linear-gradient(white, #CAEAF1, white) !important;
+}
+.history-border {
+    position: absolute;
+    color: #59A8B9;
+    top: 15%;
+    left: 13%;
+    /* border: 2px solid blueviolet; */
+}
+th {
+    color: #59A8B9;
+    font-size: 20px;
+}
+table {
+    text-align: center;
+    width: 1500px;
+}
+th, td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-collapse: collapse;
+}
+tr {
+    border-bottom: 2px solid #D9D9D9;
+}
+td {
+    font-size: 18px;
+}

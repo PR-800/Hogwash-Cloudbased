@@ -1,0 +1,52 @@
+html {
+    background-image: linear-gradient(white, #CAEAF1, white) !important;
+}
+.feedback-border {
+    position: absolute;
+    color: #59A8B9;
+    top: 15%;
+    left: 13%;
+    /* border: 2px solid blueviolet; */
+    text-overflow: ellipsis;
+}
+th {
+    color: #59A8B9;
+    font-size: 20px;
+}
+table {
+    text-align: center;
+    width: 1500px;
+}
+th, td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-collapse: collapse;
+    /* border: 1px solid black */
+}
+tr {
+    border-bottom: 2px solid #D9D9D9;
+}
+.trReading:hover {
+    background-color: #dbe2e8;
+}
+td {
+    font-size: 18px;
+}
+.readButton {
+    background-color:#59A8B9;
+    border:none;
+}
+
+.modal-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #59A8B9;
+    margin-top: 20px;
+}
+.modal-header {
+    justify-content: center;
+}
+.modal-body {
+    margin: 10px;
+    margin-top: 0;
+}

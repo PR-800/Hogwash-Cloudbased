@@ -1,0 +1,56 @@
+html {
+    background-image: url('http://localhost:3000/uploads/bg2.png') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+#contact {
+    height: 100%;
+    background-size: cover;
+}
+.contact {
+    position: absolute;
+    color: #59A8B9;
+    top: 35%;
+    left: 22%;
+    padding: 20px;
+}
+label {
+    margin-bottom: 5px;    
+}
+td {
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+}
+.mailbox {
+    position: absolute;
+    background-color: 	hsl(199, 52%, 75%, 30%);
+    border-radius: 30px;
+    top: 26%;
+    left: 50%;
+    width: 600px;
+    height: 420px;
+    padding: 35px;
+    color: #59A8B9;
+}
+.mailbox-form {
+    padding: 10px;
+    padding-top: 0px;
+}
+.icon {
+    padding: 25px;
+}
+.sendMail {
+    font-weight: 600;
+    border-radius: 15px;
+    width: 150px;
+    height: 50px;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    margin: 15px;
+    position: absolute;
+    right:5%;
+    background-color:#59A8B9;  
+    color:white;
+    bottom: 4%;
+}

@@ -1,0 +1,104 @@
+<body>
+    <!-- nav bar -->
+    <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-light justify-content-between">
+        <a class="navbar-brand mx-4" href="/">
+            <img src="/img/logo.png" width="80" height="" alt="">
+        </a>
+        <a class="navbar-brand" href="/" style="color:#59A8B9;">HogWash</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- <li class="nav-item active">
+                    <a class="nav-link" href="#">หน้าแรก</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="../#home2">สถานะเครื่องซักผ้า</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">ติดต่อเรา</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#gotQueue" data-dismiss="modal">
+                        <b class="text-info"> ( ทดสอบได้คิว ) </b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#editQueue" data-dismiss="modal">
+                        <b class="text-danger"> ( กดคิวซ้ำ ) </b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#inQueue" data-dismiss="modal">
+                        <b class="text-danger"> ( inQueue ) </b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#completed" data-dismiss="modal">
+                        <b class="text-danger"> ( completed ) </b></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="dropdown">
+            <!-- เข้าสู่ระบบ -->
+            <a class="px-3 mx-3" href="/login" v-show="online == false">
+                <button class="btn my-2 my-sm-0" type="submit"
+                    style="background-color:#59A8B9;color:white; font-size: 18; width:120px;">เข้าสู่ระบบ</button>
+            </a>
+            <!-- ยินดีต้อนรับ -->
+            <div class="dropdown" style="margin-left: 30; margin-right: 30;" v-show="online">
+                <button class="btn dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown"
+                    style="background-color:#59A8B9;color:white; font-size: 18;">ยินดีต้อนรับ {{ online_user }} ! </button>
+                <div class="dropdown-menu dropdown-menu-right" style="width: 250px;">
+                    <a class="dropdown-item" style="cursor: pointer;" data-dismiss="modal" data-toggle="modal"
+                        data-target="#changePassword">แก้ไขรหัสผ่าน</a>
+                    <a class="dropdown-item" style="cursor: pointer;" href="/history" >ประวัติการใช้งาน</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" @click="logout()" style="color: red; cursor: pointer;" >ออกจากระบบ</a>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="modal fade" id="changePassword" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content rounded-4 modalChangepass">
+                <div class="card changePass">
+                    <div class="card-body" style="padding: 10px;">
+                        <h5 class="card-title-changePass mx-3">แก้ไขรหัสผ่าน</h5>
+                        <p class="card-text">
+                            <form onsubmit="return false">
+                                <table style="border-collapse: separate;">
+                                    <tr>
+                                        <td style="text-align: right;">รหัสผ่านปัจจุบัน</td>
+                                        <td>
+                                            <input v-model="new_email" type="password" class="form-control" id="signUpEmail" placeholder="รหัสผ่านปัจจุบัน" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: right;">รหัสผ่านใหม่</td>
+                                        <td>
+                                            <input v-model="new_password1" type="password" name="new_ps" class="form-control" id="signUpPassword" placeholder="รหัสผ่านใหม่" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: right;">ยืนยันรหัสผ่านใหม่</td>
+                                        <td>
+                                            <input v-model="new_password2" type="password" name="new_ps" class="form-control" id="confirmPassword" placeholder="ยืนยันรหัสผ่านใหม่" required>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <button class="button-changePass btn py-2 mb-3" type="submit" style="background-color:#59A8B9;color:white;"
+                                    @click="changePassword()">
+                                    บันทึก
+                                </button><br>
+                            </form>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

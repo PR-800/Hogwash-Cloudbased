@@ -1,0 +1,89 @@
+<html lang="en">
+    <%- include('header') -%>
+    <head>
+        <link rel="stylesheet" href="css/login.css" />
+    </head>
+
+<body>
+    <div id="login">
+        <a class="backButton" href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z"/>
+            </svg>    
+        </a>
+
+        <div class="row">
+            <!-- LOG In -->
+            <div id="signIn_card" class="col-sm-6" >
+                <div class="card" v-show="show_signIn">
+                    <div class="card-body">
+                        <h5 class="card-title mx-3">ลงชื่อเข้าใช้</h5>
+                        <p class="card-text">
+                        <form action="/login/" enctype="multipart/form-data" method="POST" onsubmit="return false">
+                            <div class="form-group mx-3 py-4">
+                                <input v-model="user_email" type="email" class="form-control" id="signInEmail" name="signInEmail" placeholder="อีเมล" required>
+                            </div>
+                            <div class="form-group mx-3 py-4">
+                                <input v-model="user_password" type="password" class="form-control" id="signInPassword" name="signInPassword" placeholder="รหัสผ่าน" required>
+                            </div>
+                            <button class="btn py-2 mb-3" type="submit" style="background-color:#59A8B9;color:white;"
+                                @click="checkUser()">
+                            เข้าสู่ระบบ
+                        </button>
+                        </form>
+                        </p>
+                        <br><small class="text-muted py-4">ยังไม่มีบัญชีผู้ใช้ ?
+                            <a @click="show_signIn = !show_signIn" style="color:#59A8B9; cursor: pointer;">สมัครเลย</a>
+                        </small>
+                    </div>
+                </div>
+                <div class="card" v-show="show_signIn == false">
+                    <div class="card-body" style="background-color: #EEFCFF;border-radius: 30px;">
+                        <img style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);" src="../img/logo.png">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sign Up -->
+            <div id="signUp_card" class="col-sm-6">
+                <div class="card" v-show="show_signIn == false">
+                    <div class="card-body">
+                        <h5 class="card-title mx-3">สมัครสมาชิก</h5>
+                        <p class="card-text">
+                        <form action="/login/" enctype="multipart/form-data" method="POST"> 
+                            <!-- onsubmit="return false" -->
+                            <div class="form-group mx-3 py-3">
+                                <input v-model="new_email" type="email" class="form-control" name="signUpEmail" id="signUpEmail" placeholder="อีเมล" required>
+                            </div>
+                            <div class="form-group mx-3 py-3">
+                                <input v-model="new_password1" type="password" class="form-control" name="new_ps" id="signUpPassword" placeholder="รหัสผ่าน" required>
+                            </div>
+                            <div class="form-group mx-3 py-3">
+                                <input v-model="new_password2" type="password" class="form-control" name="new_ps"  id="confirmPassword" placeholder="ยืนยันรหัสผ่าน" required>
+                            </div>
+                            <button class="btn py-2 mb-3" type="submit" style="background-color:#59A8B9;color:white;"
+                                @click="addUser()">
+                                สร้างบัญชีผู้ใช้
+                            </button><br>
+                        </form>
+                        </p>
+                        <small class="text-muted py-4">มีบัญชีผู้ใช้อยู่แล้ว ?
+                            <a @click="show_signIn =! show_signIn" style="color:#59A8B9; cursor: pointer;">เข้าสู่ระบบเลย</a>
+                        </small>
+                    </div>
+                </div>
+                <div class="card" v-show="show_signIn">
+                    <div class="card-body" style="background-color: #EEFCFF;border-radius: 30px;">
+                        <img style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);" src="../img/logo.png">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+
+</html>

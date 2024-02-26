@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+*{
+    font-family: 'Prompt', sans-serif;
+    box-sizing: border-box;
+    
+}
+/* template {
+    background-color:aquamarine;
+} */
+html {
+    background-image: url('http://localhost:3000/uploads/bg2.png') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+.loginPage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+svg {
+    color: #59A8B9;
+}
+.backButton {
+    position:fixed;
+    left: -150px;
+    top:220px;
+}
+  
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 70%;
+    padding: 10px;
+    height: 500px;
+    margin: 1rem;
+    border-radius: 30px;
+    border: none;
+    /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.form-group {
+    position: relative;
+}
+  
+.help {
+position: absolute;
+top: 75%;
+text-align: left;
+width: 100%;
+padding-top: 5px;
+color: red;
+font-size: 12px;
+}
+  
+
+.loginCard {
+    border-radius: 30px;
+    border:none;
+    text-align: center;
+    height: 500px;
+    width: 1000px;
+    margin-right: 50px;
+}
+.title_login {
+    color:#59A8B9;
+    font-size: 40px;
+    font-weight: 700;
+    text-align:start;
+    margin-top:50px;
+}
+.small {
+    border: 2px solid salmon;
+    /* line-height: 20px; */
+}
+.userButton {
+    width: 92%;
+    font-size: 20px;
+    letter-spacing: .8px;
+}
